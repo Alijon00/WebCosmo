@@ -1,9 +1,18 @@
 import "./nav.css";
 import logo from "../../shared/assets/Iss.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { motion, LayoutGroup } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "../../shared/theme/useTheme";
+
+const NAV_ITEMS: { to: string; key: string; end?: boolean }[] = [
+  { to: "/", key: "Home", end: true },
+  { to: "/about", key: "About" },
+  { to: "/gallery", key: "Gallery" },
+  { to: "/planetarium", key: "Planetarium" },
+  { to: "/recruit", key: "Mission" },
+];
 
 type LanguageCode = "en" | "ru" | "tg";
 
@@ -57,15 +66,32 @@ export const Navbar = () => {
         <img src={logo} alt="ISS logo" width={60} height={60} />
       </Link>
 
-      <ul className="navMenu">
-        <li className="navItem"><Link className="navLink" to="/">{t("Home")}</Link></li>
-        <li className="navItem"><Link className="navLink" to="/about">{t("About")}</Link></li>
-        <li className="navItem"><Link className="navLink" to="/gallery">{t("Gallery")}</Link></li>
-        <li className="navItem"><Link className="navLink" to="/planetarium">{t("Planetarium")}</Link></li>
-        <li className="navItem">
-          <Link className="navLink pamir-link" to="/recruit">{t("Mission")}</Link>
-        </li>
-      </ul>
+      <LayoutGroup>
+        <ul className="navMenu">
+          {NAV_ITEMS.map((item) => (
+            <li className="navItem" key={item.to}>
+              <NavLink
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) => `navLink${isActive ? " active" : ""}`}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span>{t(item.key)}</span>
+                    {isActive && (
+                      <motion.span
+                        layoutId="navUnderline"
+                        className="navUnderline"
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                      />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </LayoutGroup>
 
       <div className="navControls">
         <button

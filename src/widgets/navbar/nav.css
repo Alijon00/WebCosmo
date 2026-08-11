@@ -47,6 +47,9 @@
 }
 
 .navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-secondary);
   text-decoration: none;
   font-family: var(--font-display);
@@ -54,6 +57,7 @@
   font-size: var(--fs-small);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding-bottom: 6px;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
@@ -62,27 +66,21 @@
   color: var(--text-primary);
 }
 
-.navLink::after {
-  content: "";
+/* Active state is derived from the route (NavLink) */
+.navLink.active {
+  color: var(--accent);
+}
+
+/* Single underline that slides between items on route change (layoutId) */
+.navUnderline {
   position: absolute;
   left: 0;
-  bottom: -6px;
-  transform: scaleX(0);
-  transform-origin: left;
-  width: 100%;
+  right: 0;
+  bottom: 0;
   height: 2px;
   background-color: var(--accent);
   box-shadow: 0 0 10px var(--accent-glow);
-  transition: transform var(--dur-mid) var(--ease-out);
-}
-
-.navLink:hover::after,
-.navLink:focus-visible::after {
-  transform: scaleX(1);
-}
-
-.pamir-link {
-  color: var(--accent);
+  border-radius: 2px;
 }
 
 /* ---- Right-side controls ---- */
