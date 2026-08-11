@@ -177,7 +177,9 @@
       "gravity": "GRAVITY",
       "temperature": "TEMPERATURE",
       "distance": "DISTANCE"
-    }
+    },
+    "prev": "Previous planet",
+    "next": "Next planet"
   },
   "mercury": {
     "name": "MERCURY",

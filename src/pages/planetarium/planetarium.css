@@ -140,29 +140,32 @@
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: white;
-  width: 50px;
-  height: 80px;
+  width: 58px;
+  height: 104px;
   cursor: pointer;
   z-index: 20;
   transition: background-color var(--dur-fast) var(--ease-out),
     border-color var(--dur-fast) var(--ease-out),
-    color var(--dur-fast) var(--ease-out);
+    color var(--dur-fast) var(--ease-out),
+    width var(--dur-fast) var(--ease-out);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 36px;
 }
 
-.nav-arrow:hover {
-  background: rgba(255, 215, 0, 0.1);
+.nav-arrow:hover,
+.nav-arrow:focus-visible {
+  background: rgba(255, 215, 0, 0.12);
   border-color: #ffd700;
   color: #ffd700;
+  width: 66px;
 }
 
-.left { left: 0; border-radius: 0 4px 4px 0; }
-.right { right: 0; border-radius: 4px 0 0 4px; }
+.left { left: 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.right { right: 0; border-radius: var(--radius-md) 0 0 var(--radius-md); }
 
 /* ФУТЕР */
 .planet-footer {
@@ -215,12 +218,74 @@
   align-items: center;
   justify-content: center;
 }
-.canvas-fallback img {
+.planet-fallback-globe {
   width: min(46vh, 46vw);
   height: min(46vh, 46vw);
   border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.12), inset -20px -20px 60px rgba(0, 0, 0, 0.6);
+  background-size: 200% 100%;
+  background-position: 0% center;
+  background-repeat: repeat-x;
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.12),
+    inset -22px -22px 60px rgba(0, 0, 0, 0.65);
+  animation: planetRoll 40s linear infinite;
+}
+
+@keyframes planetRoll {
+  from { background-position: 0% center; }
+  to { background-position: -200% center; }
+}
+
+/* Title mask reveal */
+.planet-title-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 2px;
+}
+
+/* Planet selector strip */
+.planet-selector {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90%;
+  z-index: 15;
+}
+.planet-dot {
+  min-width: 34px;
+  height: 30px;
+  padding: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+.planet-dot:hover,
+.planet-dot:focus-visible {
+  color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+}
+.planet-dot.active {
+  color: #0a0a0a;
+  background: #ffd700;
+  border-color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .planet-selector { bottom: 130px; gap: 5px; }
+  .planet-dot { min-width: 28px; height: 24px; font-size: 10px; }
 }
 
 /* UI КОНТЕЙНЕР - ФИКСИРУЕМ СЛЕВА */

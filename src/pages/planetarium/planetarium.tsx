@@ -1,4 +1,4 @@
-import { useState, Suspense, useMemo, useEffect } from "react";
+import { useState, Suspense, useMemo, useEffect, useRef, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls, useTexture, Float } from "@react-three/drei";
 import {
@@ -110,52 +110,87 @@ function webglAvailable(): boolean {
   }
 }
 
+const EASE = [0.16, 1, 0.3, 1] as const;
+
 export function Planetarium() {
   const { t } = useTranslation();
   const [idx, setIdx] = useState<number>(0);
   const reduce = useReducedMotion();
   const canvasControls = useAnimationControls();
   const [webgl] = useState<boolean>(webglAvailable);
-
-  const next = () => setIdx((i) => (i + 1) % PLANETS.length);
-  const prev = () => setIdx((i) => (i - 1 + PLANETS.length) % PLANETS.length);
+  const changing = useRef(false);
 
   const currentPlanet = PLANETS[idx];
 
-  // Incoming planet scales up + fades in (CSS transform on the canvas layer —
-  // the WebGL Canvas itself is NOT remounted, so no re-init cost).
-  useEffect(() => {
-    if (reduce) return;
-    canvasControls.start({
-      scale: [0.94, 1],
-      opacity: [0.4, 1],
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
-    });
-  }, [idx, reduce, canvasControls]);
+  // Transition BETWEEN planets: outgoing scales down + fades (200ms), swap,
+  // incoming scales up + fades in (200ms) = 400ms. Canvas is NOT remounted.
+  const goTo = useCallback(
+    async (target: number) => {
+      const t2 = ((target % PLANETS.length) + PLANETS.length) % PLANETS.length;
+      if (t2 === idx) return;
+      if (reduce || !webgl) {
+        setIdx(t2);
+        return;
+      }
+      if (changing.current) return;
+      changing.current = true;
+      await canvasControls.start({
+        scale: 0.82,
+        opacity: 0,
+        transition: { duration: 0.2, ease: EASE },
+      });
+      setIdx(t2);
+      await canvasControls.start({
+        scale: 1,
+        opacity: 1,
+        transition: { duration: 0.2, ease: EASE },
+      });
+      changing.current = false;
+    },
+    [idx, reduce, webgl, canvasControls]
+  );
 
-  // Shared variants: content scales/fades; stat items stagger 40ms.
+  const next = useCallback(() => goTo(idx + 1), [goTo, idx]);
+  const prev = useCallback(() => goTo(idx - 1), [goTo, idx]);
+
+  // Keyboard: left/right arrows change planet
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") next();
+      else if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [next, prev]);
+
+  // Content panel scales/fades; stat items stagger 40ms; title mask-reveals.
   const contentVariants = {
-    initial: { opacity: 0, scale: reduce ? 1 : 0.92 },
+    initial: { opacity: 0, scale: reduce ? 1 : 0.94 },
     enter: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.25,
-        ease: [0.16, 1, 0.3, 1],
+        duration: 0.4,
+        ease: EASE,
         when: "beforeChildren",
         staggerChildren: reduce ? 0 : 0.04,
       },
     },
     exit: {
       opacity: 0,
-      scale: reduce ? 1 : 1.06,
-      transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] },
+      scale: reduce ? 1 : 1.04,
+      transition: { duration: 0.2, ease: EASE },
     },
   } as const;
 
   const itemVariants = {
     initial: { opacity: 0, y: reduce ? 0 : 8 },
-    enter: { opacity: 1, y: 0, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } },
+    enter: { opacity: 1, y: 0, transition: { duration: 0.25, ease: EASE } },
+  } as const;
+
+  const titleVariants = {
+    initial: { y: reduce ? 0 : "115%" },
+    enter: { y: 0, transition: { duration: 0.45, ease: EASE } },
   } as const;
 
   return (
@@ -180,30 +215,37 @@ export function Planetarium() {
               <OrbitControls
                 enableZoom={false}
                 enablePan={false}
-                autoRotate
-                autoRotateSpeed={0.4}
+                autoRotate={!reduce}
+                autoRotateSpeed={0.5}
               />
             </Canvas>
           </motion.div>
         ) : (
-          /* Static fallback when WebGL is unavailable */
+          /* Static fallback when WebGL is unavailable — the equirectangular
+             texture rolls horizontally to simulate rotation (paused if reduced). */
           <div className="canvas-fallback">
-            <img
-              src={currentPlanet.url}
-              alt={t(`${currentPlanet.id}.name`)}
-              width={480}
-              height={480}
-              loading="lazy"
-              decoding="async"
+            <div
+              className="planet-fallback-globe"
+              style={{ backgroundImage: `url(${currentPlanet.url})` }}
+              role="img"
+              aria-label={t(`${currentPlanet.id}.name`)}
             />
           </div>
         )}
       </div>
 
-      <button className="nav-arrow left" onClick={prev}>
+      <button
+        className="nav-arrow left"
+        onClick={prev}
+        aria-label={t("planetarium.prev", "Previous planet")}
+      >
         ‹
       </button>
-      <button className="nav-arrow right" onClick={next}>
+      <button
+        className="nav-arrow right"
+        onClick={next}
+        aria-label={t("planetarium.next", "Next planet")}
+      >
         ›
       </button>
 
@@ -217,10 +259,12 @@ export function Planetarium() {
             exit="exit"
             className="planet-content"
           >
-            {/* Название */}
-            <h1 className="planet-big-title">
-              {t(`${currentPlanet.id}.name`)}
-            </h1>
+            {/* Название — mask reveal (rises up inside a clipped container) */}
+            <div className="planet-title-mask">
+              <motion.h1 className="planet-big-title" variants={titleVariants}>
+                {t(`${currentPlanet.id}.name`)}
+              </motion.h1>
+            </div>
 
             {/* Желтый прочерк во всю ширину */}
             <div className="title-underline"></div>
@@ -264,6 +308,22 @@ export function Planetarium() {
           </motion.div>
         </AnimatePresence>
       </div>
+      {/* Direct-jump selector strip */}
+      <div className="planet-selector" role="tablist" aria-label={t("planetarium.subtitle")}>
+        {PLANETS.map((p, i) => (
+          <button
+            key={p.id}
+            role="tab"
+            aria-selected={i === idx}
+            aria-label={t(`${p.id}.name`)}
+            className={`planet-dot${i === idx ? " active" : ""}`}
+            onClick={() => goTo(i)}
+          >
+            0{i + 1}
+          </button>
+        ))}
+      </div>
+
       <footer className="planet-footer">
         <div className="counter-big">
           <AnimatePresence mode="popLayout" initial={false}>
