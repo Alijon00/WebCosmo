@@ -249,7 +249,14 @@
     "styleGuide": "Style Guide",
     "licence": "Licence",
     "changelog": "Changelog",
-    "credit": "© Made by Rustamov A."
+    "credit": "© Made by Rustamov A.",
+    "tagline": "Exploring the International Space Station and our solar system.",
+    "explore": "Explore",
+    "data": "Data & imagery",
+    "connect": "Connect",
+    "wheretheiss": "Live position — wheretheiss.at",
+    "nasa": "Planet & Earth imagery — NASA",
+    "olympiad": "3rd place · National Olympiad"
   },
   "recruit": {
     "redirecting": "Redirecting to the training center…"
