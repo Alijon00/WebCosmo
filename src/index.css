@@ -239,6 +239,8 @@ body {
     transform var(--dur-mid) var(--ease-out);
   will-change: opacity, transform;
 }
+.reveal-left { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
 .reveal.in-view {
   opacity: 1;
   transform: none;

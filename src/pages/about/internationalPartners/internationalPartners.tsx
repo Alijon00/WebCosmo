@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Reveal } from '../../../shared/motion/Reveal';
 
 export const InternationalPartners: React.FC = () => {
   const { t } = useTranslation();
@@ -14,17 +15,16 @@ export const InternationalPartners: React.FC = () => {
   ];
 
   return (
-    <section className="about-section animate-section">
+    <section className="about-section">
       {/* Заголовок берём через i18 */}
       <h2>{t('partnersTitle', 'INTERNATIONAL PARTNERS')}</h2>
       <div className="partners-grid">
-        {partners.map((partner) => (
-          <div key={partner.key} className="partner-card">
-            {/* Можно оставить локальные имена, или использовать i18 если нужно переводить */}
+        {partners.map((partner, index) => (
+          <Reveal key={partner.key} className="partner-card" delay={index * 60}>
             <h3>{t(`partners.${partner.key}.name`, partner.name)}</h3>
             <p className="country">{t(`partners.${partner.key}.country`, partner.country)}</p>
             <p className="role">{t(`partners.${partner.key}.role`, partner.role)}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

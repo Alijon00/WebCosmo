@@ -40,21 +40,8 @@
   opacity: 0.9;
 }
 
-/* Анимации */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-section {
-  animation: fadeInUp 0.8s ease-out;
-}
+/* Entrance animations are handled by the shared <Reveal> (IntersectionObserver)
+   using the single ease-out / 250ms family in index.css. */
 
 /* AboutHeader Styles */
 .subtitle {
@@ -155,7 +142,8 @@
   background: var(--card-bg);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  transition: transform 0.3s ease;
+  transition: transform var(--dur-fast) var(--ease-out),
+    opacity var(--dur-mid) var(--ease-out);
 }
 
 .achievement-card:hover {

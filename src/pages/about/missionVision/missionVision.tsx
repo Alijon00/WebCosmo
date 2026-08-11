@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Reveal } from '../../../shared/motion/Reveal';
 
 export const MissionVision: React.FC = () => {
   const { t } = useTranslation();
@@ -26,16 +27,16 @@ export const MissionVision: React.FC = () => {
   ];
 
   return (
-    <section className="about-section animate-section">
+    <section className="about-section">
       <h2>{t('missionVision.title', 'MISSION & VISION')}</h2>
       <div className="mission-content">
-        {cards.map((card) => (
-          <div key={card.key} className="mission-card">
+        {cards.map((card, i) => (
+          <Reveal key={card.key} className="mission-card" delay={i * 90}>
             <h3>
               {card.icon} {card.title}
             </h3>
             <p>{card.description}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

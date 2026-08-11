@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Reveal } from '../../../shared/motion/Reveal';
 
 export const Timeline: React.FC = () => {
   const { t } = useTranslation();
@@ -38,17 +39,22 @@ export const Timeline: React.FC = () => {
   ];
 
   return (
-    <section className="about-section animate-section">
+    <section className="about-section">
       <h2>{t('timeline.title', 'HISTORICAL TIMELINE')}</h2>
       <div className="timeline">
         {milestones.map((milestone, index) => (
-          <div key={index} className="timeline-item">
+          // odd children (index 0,2,4) are right-aligned -> slide from right
+          <Reveal
+            key={index}
+            className="timeline-item"
+            from={index % 2 === 0 ? "right" : "left"}
+          >
             <div className="timeline-year">{milestone.year}</div>
             <div className="timeline-content">
               <h4>{milestone.event}</h4>
               <p>{milestone.detail}</p>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

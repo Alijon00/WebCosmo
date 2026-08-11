@@ -47,16 +47,20 @@ const ExternalRedirect = () => {
 function AnimatedRoutes() {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Suspense fallback={<RouteFallback />}>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-          <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
-          <Route path="/planetarium" element={<PageTransition><Planetarium /></PageTransition>} />
-          <Route path="/recruit" element={<ExternalRedirect />} />
-        </Routes>
-      </Suspense>
+    <AnimatePresence mode="wait">
+      {/* The KEYED motion wrapper must be AnimatePresence's direct child for
+          enter/exit to fire — previously a <Suspense> sat between them. */}
+      <PageTransition key={location.pathname}>
+        <Suspense fallback={<RouteFallback />}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/planetarium" element={<Planetarium />} />
+            <Route path="/recruit" element={<ExternalRedirect />} />
+          </Routes>
+        </Suspense>
+      </PageTransition>
     </AnimatePresence>
   );
 }

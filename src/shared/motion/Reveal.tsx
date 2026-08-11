@@ -7,17 +7,20 @@ interface RevealProps {
   className?: string;
   /** stagger delay in ms */
   delay?: number;
+  /** entrance direction: rise (default), or slide from left/right */
+  from?: "up" | "left" | "right";
 }
 
 /**
  * Scroll-reveal using IntersectionObserver + the shared fade+rise transition
  * (defined in index.css as `.reveal`). Reveals once, then disconnects.
  */
-export function Reveal({ children, as = "div", className, delay = 0 }: RevealProps) {
+export function Reveal({ children, as = "div", className, delay = 0, from = "up" }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Tag = as as any;
+  const dirClass = from === "left" ? " reveal-left" : from === "right" ? " reveal-right" : "";
 
   useEffect(() => {
     const el = ref.current;
@@ -44,7 +47,7 @@ export function Reveal({ children, as = "div", className, delay = 0 }: RevealPro
   return (
     <Tag
       ref={ref}
-      className={`reveal${shown ? " in-view" : ""}${className ? " " + className : ""}`}
+      className={`reveal${dirClass}${shown ? " in-view" : ""}${className ? " " + className : ""}`}
     >
       {children}
     </Tag>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Reveal } from '../../../shared/motion/Reveal';
 
 export const Achievements: React.FC = () => {
   const { t } = useTranslation();
@@ -11,15 +12,15 @@ export const Achievements: React.FC = () => {
   }[];
 
   return (
-    <section className="about-section animate-section">
+    <section className="about-section">
       <h2>{t('achievementsTitle')}</h2>
       <div className="achievements-grid">
         {achievements.map((achievement, index) => (
-          <div key={index} className="achievement-card">
+          <Reveal key={index} className="achievement-card" delay={index * 60}>
             <div className="achievement-icon">{achievement.icon}</div>
             <h3>{achievement.title}</h3>
             <p>{achievement.description}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
