@@ -1,0 +1,225 @@
+.iss-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.iss-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.iss-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-top: var(--space-2);
+}
+
+/* Live / offline badge */
+.iss-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+.iss-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+}
+.iss-status.is-live { color: #59d98a; border-color: rgba(89, 217, 138, 0.4); }
+.iss-status.is-live .iss-status-dot {
+  background: #59d98a;
+  box-shadow: 0 0 8px #59d98a;
+  animation: issPulse 1.6s ease-out infinite;
+}
+.iss-status.is-offline { color: #ff6b5e; border-color: rgba(255, 107, 94, 0.4); }
+.iss-status.is-offline .iss-status-dot { background: #ff6b5e; }
+.iss-status.is-loading .iss-status-dot { animation: issPulse 1.6s ease-out infinite; }
+
+@keyframes issPulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.iss-warning {
+  font-size: var(--fs-small);
+  color: #ffb020;
+  background: rgba(255, 176, 32, 0.08);
+  border: 1px solid rgba(255, 176, 32, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.iss-layout {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+/* ---- Map ---- */
+.iss-map {
+  padding: var(--space-4);
+  position: relative;
+}
+.iss-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2 / 1;
+  border-radius: var(--radius-sm);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(80, 130, 200, 0.10), transparent 70%),
+    var(--surface-1);
+}
+
+.iss-grid line {
+  stroke: var(--border);
+  stroke-width: 0.3;
+}
+.iss-grid .iss-equator { stroke: var(--border-strong); stroke-width: 0.4; stroke-dasharray: 2 2; }
+
+.iss-land {
+  fill: color-mix(in srgb, var(--text-primary) 14%, transparent);
+  stroke: color-mix(in srgb, var(--text-primary) 22%, transparent);
+  stroke-width: 0.25;
+}
+
+.iss-track {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.55;
+}
+
+.iss-link {
+  stroke: var(--accent);
+  stroke-width: 0.4;
+  stroke-dasharray: 1.5 2;
+  opacity: 0.5;
+}
+
+.iss-dushanbe circle { fill: var(--accent); }
+.iss-dushanbe text {
+  fill: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 4px;
+}
+
+.iss-marker line { stroke: #fff; stroke-width: 0.4; opacity: 0.8; }
+.iss-marker .iss-dot { fill: #fff; }
+.iss-marker .iss-footprint {
+  fill: rgba(255, 215, 0, 0.08);
+  stroke: rgba(255, 215, 0, 0.3);
+  stroke-width: 0.3;
+}
+.iss-marker .iss-ping {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.6;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform-origin: 50% 50%;
+  animation: issPing 2s ease-out infinite;
+}
+.iss-marker.is-stale .iss-ping { animation: none; }
+.iss-marker.is-stale { opacity: 0.5; }
+
+@keyframes issPing {
+  0% { transform: scale(0.5); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.iss-credit {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--text-tertiary);
+  text-align: right;
+}
+
+/* ---- Stat cards ---- */
+.iss-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  transition: opacity var(--dur-mid) var(--ease-out);
+}
+.iss-stats.is-stale { opacity: 0.65; }
+
+.iss-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+}
+
+.iss-label {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.iss-stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.iss-unit { color: var(--text-tertiary); font-size: 0.75em; }
+
+.iss-distance {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: var(--radius-md);
+}
+.iss-distance-value {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .iss-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .iss-stats { grid-template-columns: 1fr; }
+  .iss-distance { grid-column: auto; }
+}

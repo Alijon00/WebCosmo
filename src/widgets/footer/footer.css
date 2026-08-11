@@ -1,0 +1,174 @@
+.footerContain {
+  margin-top: var(--space-9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-7);
+  width: 100%;
+  padding: var(--space-7) var(--space-6);
+  background: var(--surface-1);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+.topFooterContent {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: var(--space-8);
+  padding-top: var(--space-5);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerList {
+  display: flex;
+  gap: var(--space-6);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.footerList p {
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footerList p:hover { color: var(--accent); }
+
+.lowerFooterContent {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: var(--space-8);
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: var(--fs-small);
+  line-height: 24px;
+}
+
+.networks {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.networks img {
+  transition: filter var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+}
+.networks img:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+/* Gray social icons need darkening on the light background */
+:root[data-theme="light"] .networks img {
+  filter: brightness(0.4);
+}
+
+.lightLogo img {
+  width: 70px;
+  height: 70px;
+}
+
+
+/* ================= */
+/* MOBILE ADAPTIVE FOR FOOTER */
+/* ================= */
+
+@media (max-width: 1024px) {
+
+  .footerContain {
+    gap: 32px;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .topFooterContent {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .footerList {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .lowerFooterContent {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .networks {
+    gap: 10px;
+  }
+
+  .lightLogo img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footerContain {
+    gap: 24px;
+    padding: 20px 15px;
+  }
+
+  .footerList {
+    font-size: 13px;
+    gap: 15px;
+  }
+
+  .lowerFooterContent {
+    font-size: 12px;
+    gap: 12px;
+  }
+
+  .lightLogo img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .footerContain {
+    gap: 16px;
+    padding: 15px 10px;
+  }
+
+  .topFooterContent,
+  .lowerFooterContent {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footerList {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .lowerFooterContent {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .lightLogo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .networks {
+    gap: 8px;
+  }
+}

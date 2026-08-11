@@ -1,0 +1,270 @@
+{
+  "Home": "Home",
+  "About": "About us",
+  "Gallery": "Gallery",
+  "Planetarium": "Planetarium",
+  "Mission": "Mission",
+  "Description": "This is a demo site",
+  "header": {
+    "hi": "HI, WE ARE THE ISS.",
+    "subtitle": "A SPACE STATION ORBITING EARTH",
+    "description": "BUILT FOR SCIENCE & EXPLORATION",
+    "ctaPrimary": "Open the planetarium",
+    "ctaSecondary": "Explore the ISS"
+  },
+  "home": {
+    "stationName": "International Space Station",
+    "stationDescription": "A hub for science, research & human spaceflight.",
+    "missionTitle": "MISSION",
+    "missionSubtitle": "Science, technology & international cooperation",
+    "orbitSinceTitle": "IN ORBIT SINCE",
+    "orbitSinceDate": "1998 / 20 November",
+    "crewExperienceTitle": "CREW EXPERIENCE",
+    "crewExperienceText": "240+ astronauts from 19 countries",
+    "builtByTitle": "BUILT BY",
+    "builtByText": "NASA, Roscosmos, ESA, JAXA, CSA",
+    "achievements": {
+      "modules": "Science Modules & Experiments",
+      "years": "Years in Orbit",
+      "astronauts": "Astronauts Visited"
+    }
+  },
+  "aboutTitle": "ABOUT ISS",
+  "aboutSubtitle": "25 Years of International Cooperation in Space",
+  "firstModuleYear": "1998",
+  "firstModuleText": "First Module Launched",
+  "astronautsVisited": "420+",
+  "astronautsText": "Astronauts Visited",
+  "partnerNations": "15",
+  "partnerNationsText": "Partner Nations",
+  "researchExperiments": "3000+",
+  "researchExperimentsText": "Research Experiments",
+  "timeline": {
+    "1998": {
+      "event": "First module Zarya launched",
+      "detail": "Beginning of ISS assembly"
+    },
+    "2000": {
+      "event": "First expedition crew",
+      "detail": "Continuous human presence begins"
+    },
+    "2008": {
+      "event": "Columbus laboratory added",
+      "detail": "ESA joins permanent research"
+    },
+    "2011": {
+      "event": "Final shuttle mission",
+      "detail": "Completion of US assembly"
+    },
+    "2020": {
+      "event": "Commercial Crew Program",
+      "detail": "New era of space transportation"
+    },
+    "2023": {
+      "event": "25 years in orbit",
+      "detail": "Celebrating quarter century"
+    },
+    "title": "HISTORICAL TIMELINE"
+  },
+  "gallery": {
+    "title": "ISS GALLERY",
+    "subtitle": "25 Years of International Space Station",
+    "subtitle1": "ISS MK D",
+    "subtitle2": "1998 - 2023",
+    "subtitle3": "INTERNATIONAL COOPERATION",
+    "categories": {
+      "all": "All",
+      "station": "Station",
+      "astronauts": "Astronauts",
+      "science": "Science",
+      "earth": "Earth"
+    },
+    "credit": "Credit",
+    "footer": "International Space Station • 25 Years of Discovery"
+  },
+  "achievementsTitle": "KEY ACHIEVEMENTS",
+  "achievementsList": [
+    {
+      "icon": "🔬",
+      "title": "Scientific Research",
+      "description": "Over 3,000 experiments conducted across multiple disciplines"
+    },
+    {
+      "icon": "🌍",
+      "title": "Earth Observation",
+      "description": "Monitoring climate change and natural disasters from unique vantage point"
+    },
+    {
+      "icon": "🧬",
+      "title": "Medical Advances",
+      "description": "Breakthroughs in disease research and medical technology development"
+    },
+    {
+      "icon": "🚀",
+      "title": "Technology Innovation",
+      "description": "Development of new materials, systems, and space technologies"
+    }
+  ],
+  "futurePlansTitle": "FUTURE OF ISS",
+  "futurePlansList": [
+    {
+      "icon": "🛰️",
+      "title": "Extended Operations",
+      "description": "ISS operations confirmed through 2030, with potential extension beyond"
+    },
+    {
+      "icon": "🌙",
+      "title": "Lunar Gateway",
+      "description": "ISS experience contributing to development of lunar orbit station"
+    },
+    {
+      "icon": "🔴",
+      "title": "Mars Missions",
+      "description": "Research on ISS directly supporting future human missions to Mars"
+    },
+    {
+      "icon": "🏢",
+      "title": "Commercial Expansion",
+      "description": "Growing role of commercial partners in space station operations"
+    }
+  ],
+  "partnersTitle": "INTERNATIONAL PARTNERS",
+  "partners": {
+    "nasa": {
+      "name": "NASA",
+      "country": "United States",
+      "role": "Program management and major modules"
+    },
+    "roscosmos": {
+      "name": "Roscosmos",
+      "country": "Russia",
+      "role": "Core modules and crew transportation"
+    },
+    "esa": {
+      "name": "ESA",
+      "country": "European Space Agency",
+      "role": "Columbus laboratory and ATV"
+    },
+    "jaxa": {
+      "name": "JAXA",
+      "country": "Japan",
+      "role": "Kibo laboratory and HTV cargo"
+    },
+    "csa": {
+      "name": "CSA",
+      "country": "Canada",
+      "role": "Mobile Servicing System and robotics"
+    }
+  },
+  "missionVision": {
+    "title": "MISSION & VISION",
+    "mission": {
+      "title": "Our Mission",
+      "description": "The International Space Station serves as an unprecedented laboratory for scientific research and technological development in microgravity. It enables long-term human presence in space and serves as a stepping stone for future exploration missions to the Moon and Mars."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To maintain a continuous human presence in space for peaceful purposes, foster international cooperation, advance scientific knowledge, and inspire the next generation of explorers, scientists, and engineers worldwide."
+    }
+  },
+  "planetarium": {
+    "title": "SYSTEM_OS v.2.6",
+    "subtitle": "DEEP SPACE EXPLORER",
+    "distance": "DISTANCE:",
+    "readFact": "INTERESTING FACT:",
+    "labels": {
+      "mass": "MASS",
+      "gravity": "GRAVITY",
+      "temperature": "TEMPERATURE",
+      "distance": "DISTANCE"
+    }
+  },
+  "mercury": {
+    "name": "MERCURY",
+    "desc": "The smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth's Moon.",
+    "mass": "3.285 × 10^23 kg",
+    "gravity": "3.7 m/s²",
+    "temp": "167°C",
+    "fact": "A day on Mercury lasts 59 Earth days, but a year is only 88 days!"
+  },
+  "venus": {
+    "name": "VENUS",
+    "desc": "Spinning in the opposite direction to most planets, Venus is the hottest world in our solar system.",
+    "mass": "4.867 × 10^24 kg",
+    "gravity": "8.87 m/s²",
+    "temp": "464°C",
+    "fact": "Its atmosphere is so thick that the Sun looks like a smear of light from the surface."
+  },
+  "earth": {
+    "name": "EARTH",
+    "desc": "Our home planet is the only place we know of so far that’s inhabited by living things.",
+    "mass": "5.972 × 10^24 kg",
+    "gravity": "9.8 m/s²",
+    "temp": "15°C",
+    "fact": "Earth is the only planet not named after a god."
+  },
+  "mars": {
+    "name": "MARS",
+    "desc": "The Red Planet is a dusty, cold, desert world with a very thin atmosphere.",
+    "mass": "6.39 × 10^23 kg",
+    "gravity": "3.71 m/s²",
+    "temp": "-65°C",
+    "fact": "Mars is home to Olympus Mons, the largest volcano in the entire solar system."
+  },
+  "jupiter": {
+    "name": "JUPITER",
+    "desc": "Jupiter is more than twice as massive as the other planets of our solar system combined.",
+    "mass": "1.898 × 10^27 kg",
+    "gravity": "24.79 m/s²",
+    "temp": "-110°C",
+    "fact": "The Great Red Spot is a giant storm that has been raging for over 300 years."
+  },
+  "saturn": {
+    "name": "SATURN",
+    "desc": "Adorned with a dazzling system of icy rings, Saturn is unique in our solar system.",
+    "mass": "5.683 × 10^26 kg",
+    "gravity": "10.44 m/s²",
+    "temp": "-140°C",
+    "fact": "Saturn is so light that it would float if you put it in a giant bathtub of water."
+  },
+  "uranus": {
+    "name": "URANUS",
+    "desc": "Uranus is an ice giant. It gets its blue-green color from methane gas in the atmosphere.",
+    "mass": "8.681 × 10^25 kg",
+    "gravity": "8.69 m/s²",
+    "temp": "-195°C",
+    "fact": "It rotates on its side at nearly a 90-degree angle, like a rolling ball."
+  },
+  "neptune": {
+    "name": "NEPTUNE",
+    "desc": "Dark, cold, and whipped by supersonic winds, Neptune is the last of the hydrogen and helium gas giants.",
+    "mass": "1.024 × 10^26 kg",
+    "gravity": "11.15 m/s²",
+    "temp": "-201°C",
+    "fact": "Neptune was the first planet located through mathematical calculations rather than a telescope."
+  },
+  "footer": {
+    "styleGuide": "Style Guide",
+    "licence": "Licence",
+    "changelog": "Changelog",
+    "credit": "© Made by Rustamov A."
+  },
+  "recruit": {
+    "redirecting": "Redirecting to the training center…"
+  },
+  "iss": {
+    "title": "LIVE ISS TRACKING",
+    "subtitle": "REAL-TIME ORBITAL TELEMETRY",
+    "latitude": "LATITUDE",
+    "longitude": "LONGITUDE",
+    "altitude": "ALTITUDE",
+    "velocity": "VELOCITY",
+    "distanceTitle": "DISTANCE FROM DUSHANBE",
+    "live": "LIVE",
+    "unavailable": "Data unavailable — showing last known position",
+    "connecting": "Acquiring signal…",
+    "credit": "Data: wheretheiss.at",
+    "dushanbe": "Dushanbe",
+    "iss": "ISS"
+  }
+}

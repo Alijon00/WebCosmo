@@ -1,0 +1,160 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  align-items: center;
+  padding-bottom: var(--space-9);
+}
+
+.infoContain {
+  padding-top: var(--space-9);
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-9);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.leftInfoContain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 440px;
+}
+
+/* Station name -> small accent label */
+.designerName {
+  display: flex;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Lead statement -> white heading */
+.designerProduct {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+  padding-top: var(--space-3);
+}
+
+.rightInfoContain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 560px;
+}
+
+/* MISSION headline */
+.bigLorem p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.designerInfoContain {
+  display: flex;
+  gap: var(--space-7);
+  flex-wrap: wrap;
+}
+
+.designerInfoPart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* Field labels -> accent micro-labels */
+.designerInfoPart .aboutText {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---- Achievement stat cards (planetarium treatment) ---- */
+.achivementsContain {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.squares {
+  min-width: 260px;
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  transition: border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.squares:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-1);
+}
+
+/* Big number -> accent (allowed: key numbers) */
+.squares > p:first-child {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-title);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.squares .aboutAchievements {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-transform: none;
+}
+
+/* ================= */
+/* TABLET            */
+/* ================= */
+@media (max-width: 1024px) {
+  .infoContain {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-7);
+    padding-top: var(--space-8);
+  }
+  .leftInfoContain, .rightInfoContain { max-width: 560px; width: 100%; }
+  .designerInfoContain { gap: var(--space-6); }
+}
+
+/* ================= */
+/* MOBILE            */
+/* ================= */
+@media (max-width: 768px) {
+  .homeContainer { gap: var(--space-8); }
+  .infoContain { padding: var(--space-8) var(--space-4) 0; }
+  .achivementsContain { flex-direction: column; align-items: stretch; padding: 0 var(--space-4); }
+  .squares { min-width: 0; width: 100%; align-items: center; text-align: center; }
+}

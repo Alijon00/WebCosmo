@@ -1,0 +1,269 @@
+/* ============================================================= */
+/*  ISS DESIGN SYSTEM — tokens extracted from the planetarium    */
+/*  Orbitron (display) · Inter (body) · system mono (telemetry)  */
+/*  Yellow (#ffd700) is an ACCENT ONLY. Text is near-white +     */
+/*  clear secondary / tertiary grays.                            */
+/* ============================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+
+  /* ---- Type faces (3) ---- */
+  /* Latin display -> Orbitron. Cyrillic (RU/TG) falls through to
+     Oswald, then Inter, which both carry Tajik glyphs. */
+  --font-display: "Orbitron", "Oswald", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+
+  /* ---- Type scale (exactly 6) ---- */
+  --fs-display: clamp(2.75rem, 8vw, 6.25rem); /* 44 -> 100 hero / planet */
+  --fs-title:   clamp(2rem, 4.5vw, 3.5rem);   /* 32 -> 56 section titles  */
+  --fs-heading: clamp(1.35rem, 2.6vw, 2rem);  /* 22 -> 32 sub-headings    */
+  --fs-body:    1rem;                          /* 16 body                  */
+  --fs-small:   0.8125rem;                     /* 13 captions / facts      */
+  --fs-label:   0.6875rem;                     /* 11 eyebrow / spec labels */
+
+  --lh-tight: 0.95;
+  --lh-snug: 1.2;
+  --lh-normal: 1.6;
+  --tracking-label: 0.22em;
+  --tracking-tight: -0.02em;
+
+  /* ---- Spacing scale (4/8/12/16/24/32/48/64/96) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Radii (two) ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* ---- Color — DARK (default) ---- */
+  --bg-0: #000000;
+  --bg-1: #0a0a0a;
+  --bg-2: #0f0f0f;
+
+  --text-primary: #f4f5f7;
+  --text-secondary: rgba(244, 245, 247, 0.66);
+  --text-tertiary: rgba(244, 245, 247, 0.55);
+
+  --surface-1: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.20);
+
+  --accent: #ffd700;
+  --accent-bright: #ffe81f;
+  --accent-ink: #0a0a0a;                 /* text placed ON accent */
+  --accent-soft: rgba(255, 215, 0, 0.12);
+  --accent-glow: rgba(255, 215, 0, 0.45);
+
+  /* ---- One card surface treatment + one border treatment ---- */
+  --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --card-border: var(--border);
+  --card-blur: 20px;
+  --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-mid: 250ms;
+
+  /* starfield tint */
+  --star-1: #ffffff;
+  --star-2: #ffdada;
+  --star-3: #ff3300;
+}
+
+/* ============================================================= */
+/*  LIGHT THEME — redesigned, not inverted.                      */
+/*  Warm off-white bg, dark ink, DARKENED amber accent (pure     */
+/*  yellow is unreadable on white). All contrast >= 4.5:1.       */
+/* ============================================================= */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-0: #ece6d9;
+  --bg-1: #f6f2ea;
+  --bg-2: #ffffff;
+
+  --text-primary: #1a1712;                    /* ~16:1 on bg-1 */
+  --text-secondary: rgba(26, 23, 18, 0.72);   /* ~6.7:1 */
+  --text-tertiary: rgba(26, 23, 18, 0.64);    /* ~5.2:1 */
+
+  --surface-1: rgba(20, 18, 14, 0.035);
+  --surface-2: rgba(20, 18, 14, 0.07);
+  --border: rgba(20, 18, 14, 0.16);
+  --border-strong: rgba(20, 18, 14, 0.30);
+
+  --accent: #855200;                           /* dark amber, ~5.3:1 as text */
+  --accent-bright: #6d4300;                    /* darker on hover */
+  --accent-ink: #ffffff;                       /* text on amber fill, ~5.7:1 */
+  --accent-soft: rgba(133, 82, 0, 0.12);
+  --accent-glow: rgba(133, 82, 0, 0.28);
+
+  --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.62) 100%);
+  --card-border: var(--border);
+  --shadow-1: 0 10px 30px rgba(60, 50, 25, 0.14);
+
+  --star-1: rgba(90, 78, 55, 0.5);
+  --star-2: rgba(120, 90, 70, 0.45);
+  --star-3: rgba(150, 70, 40, 0.4);
+}
+
+/* Daytime sky: keep the starfield whisper-quiet in light mode. */
+:root[data-theme="light"] body::before {
+  opacity: 0.14;
+}
+
+/* Orbitron carries no Cyrillic. For RU/TG, drop it so headings render fully
+   in Oswald (serves the cyrillic-ext subset incl. Tajik ӣ ӯ ҳ қ ғ ҷ),
+   with Inter as an additional safety net. */
+html[lang="ru"],
+html[lang="tg"] {
+  --font-display: "Oswald", "Inter", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background: radial-gradient(circle at center, var(--bg-1) 0%, var(--bg-0) 100%)
+    no-repeat fixed;
+  background-color: var(--bg-0);
+  min-height: 100vh;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  /* Scoped theme transition (replaces the old universal * transition) */
+  transition: background-color var(--dur-mid) ease, color var(--dur-mid) ease;
+}
+
+/* ---- Reusable primitives ---- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Visible focus ring for keyboard users everywhere */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Scroll-reveal — the shared fade + 12px rise, 250ms ease-out */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--dur-mid) var(--ease-out),
+    transform var(--dur-mid) var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ЗВЕЗДЫ — starfield (used for hero parallax in Phase 4) */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(1.5px 1.5px at 25px 45px, var(--star-1), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 100px 150px, var(--star-2), rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 200px 300px, #eee, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 350px 100px, var(--star-1), rgba(0, 0, 0, 0)),
+    radial-gradient(2.5px 2.5px at 400px 350px, var(--star-3), rgba(255, 30, 30, 0)),
+    radial-gradient(1.5px 1.5px at 550px 250px, #ffcccc, rgba(0, 0, 0, 0));
+  background-size: 300px 300px;
+  /* Hero pointer-parallax drives these vars (max 15px); 0 elsewhere. */
+  background-position: var(--star-shift-x, 0px) var(--star-shift-y, 0px);
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+  animation: rotateSky 50s linear infinite;
+  transition: background-position 0.2s var(--ease-out);
+}
+
+@keyframes rotateSky {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ========================= */
+/* TABLET                    */
+/* ========================= */
+@media (max-width: 1024px) {
+  body { font-size: 15px; }
+  body::before { opacity: 0.6; background-size: 250px 250px; }
+}
+
+/* ========================= */
+/* MOBILE                    */
+/* ========================= */
+@media (max-width: 768px) {
+  body { font-size: 14px; padding: 0 12px; }
+  body::before { background-size: 200px 200px; opacity: 0.5; }
+  .issLogo { max-width: 180px; height: auto; }
+}
+
+/* ========================= */
+/* SMALL PHONES              */
+/* ========================= */
+@media (max-width: 480px) {
+  body { font-size: 13px; padding: 0 10px; }
+  .issLogo { max-width: 150px; }
+  body::before { background-size: 150px 150px; opacity: 0.4; }
+}
+
+/* ========================= */
+/* REDUCED MOTION            */
+/* ========================= */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    background-position: 0 0 !important; /* no pointer parallax */
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

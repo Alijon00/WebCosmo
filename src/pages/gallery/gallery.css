@@ -1,0 +1,453 @@
+.gallery-container {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--text-secondary);
+  padding-top: 150px; /* Отступ под фиксированную навбар */
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 32px;
+}
+
+.gallery-header h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.gallery-header p {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.gallery-subtitle {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 14px;
+  opacity: 0.7;
+  letter-spacing: 2px;
+  flex-wrap: wrap;
+}
+
+/* Кнопки фильтров */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0 48px;
+  flex-wrap: wrap;
+  padding: 0 32px;
+}
+
+.filter-btn {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+/* Галерея */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--dur-mid) var(--ease-out),
+    box-shadow var(--dur-mid) var(--ease-out);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Always sits on a dark gradient — keep text light in both themes */
+  color: #f4f5f7;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  padding: 32px 16px 16px;
+  transform: translateY(100%);
+  transition: transform var(--dur-mid) var(--ease-out);
+}
+
+.image-overlay h3 { color: var(--accent); }
+
+.gallery-item:hover .image-overlay {
+  transform: translateY(0);
+}
+
+.image-overlay h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.image-overlay span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 32px;
+}
+
+.modal-content {
+  background: var(--bg-2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-strong);
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 32px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.modal-info h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-info .date {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-info .description {
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.source-info {
+  font-size: 12px;
+  opacity: 0.6;
+  border-top: 1px solid var(--border-strong);
+  padding-top: 16px;
+}
+
+.gallery-footer {
+  text-align: center;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  opacity: 0.7;
+  padding-bottom: 32px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding-top: 70px;
+  }
+
+  .gallery-header {
+    padding: 0 16px;
+    margin-bottom: 32px;
+  }
+
+  .gallery-header h1 {
+    font-size: 32px;
+    letter-spacing: 4px;
+  }
+
+  .gallery-header > p {
+    font-size: 16px;
+  }
+
+  .filter-buttons {
+    gap: 8px;
+    margin: 24px 0 32px;
+    padding: 0 16px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px 32px;
+  }
+
+  .modal {
+    padding: 16px;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+  }
+
+  .modal-info {
+    padding: 24px;
+    max-height: 300px;
+  }
+
+  .modal-info h2 {
+    font-size: 20px;
+  }
+
+  .gallery-subtitle {
+    gap: 16px;
+    font-size: 12px;
+  }
+}
+
+/* ================= */
+/* MOBILE ENHANCED FOR GALLERY */
+/* ================= */
+
+@media (max-width: 768px) {
+
+  .gallery-container {
+    padding-top: 60px;
+  }
+
+  .gallery-header {
+    padding: 0 12px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-header h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .gallery-header p {
+    font-size: 14px;
+  }
+
+  .gallery-subtitle {
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 24px;
+    padding: 0 12px;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 12px 24px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4/3;
+  }
+
+  .image-overlay {
+    padding: 16px 8px 8px;
+  }
+
+  .image-overlay h3 {
+    font-size: 16px;
+  }
+
+  .image-overlay span {
+    font-size: 10px;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+
+  .modal-content img {
+    max-height: 250px;
+  }
+
+  .modal-info {
+    padding: 16px;
+    max-height: 200px;
+  }
+
+  .modal-info h2 {
+    font-size: 18px;
+  }
+
+  .modal-info .description {
+    font-size: 14px;
+  }
+
+  .source-info {
+    font-size: 10px;
+  }
+
+  .gallery-footer {
+    font-size: 12px;
+    padding: 16px 8px 24px;
+  }
+}
+
+/* ================= */
+/* SMALL PHONES (up to 480px) */
+/* ================= */
+
+@media (max-width: 480px) {
+
+  .gallery-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .gallery-header p {
+    font-size: 12px;
+  }
+
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .gallery-subtitle {
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .modal-content img {
+    max-height: 200px;
+  }
+
+  .modal-info {
+    max-height: 180px;
+  }
+
+  .modal-info h2 {
+    font-size: 16px;
+  }
+
+  .modal-info .description {
+    font-size: 12px;
+  }
+
+  .source-info {
+    font-size: 9px;
+  }
+}

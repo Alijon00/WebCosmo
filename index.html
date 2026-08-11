@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/shared/assets/Iss.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International Space Station</title>
+    <script>
+      // Set theme + lang before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("iss-theme");
+          if (t !== "dark" && t !== "light") {
+            t = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.style.colorScheme = t;
+          var l = localStorage.getItem("iss-lang");
+          if (l) document.documentElement.setAttribute("lang", l);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+    
+/

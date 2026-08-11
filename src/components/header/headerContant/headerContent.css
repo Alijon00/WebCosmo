@@ -1,0 +1,118 @@
+.headerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainSection {
+  margin-top: 180px;
+  padding: 0 var(--space-9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-9);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutIssContain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+/* Small accent eyebrow (label — allowed use of yellow) */
+.heroEyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+  margin-bottom: var(--space-5);
+}
+
+/* Display headline — WHITE, not yellow */
+.heroTitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
+  margin: 0;
+}
+
+/* Single yellow accent underline */
+.heroUnderline {
+  width: 84px;
+  height: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+  margin: var(--space-5) 0 var(--space-6);
+  border-radius: 2px;
+}
+
+/* Supporting paragraph — secondary gray */
+.heroLead {
+  font-family: var(--font-body);
+  font-size: var(--fs-heading);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  max-width: 30ch;
+  margin-bottom: var(--space-7);
+}
+
+.btnsContain {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.issLogo {
+  width: min(420px, 38vw);
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.08));
+}
+
+/* ================= */
+/* TABLET            */
+/* ================= */
+@media (max-width: 1024px) {
+  .mainSection {
+    margin-top: 130px;
+    padding: 0 var(--space-6);
+    gap: var(--space-7);
+  }
+  .heroLead { font-size: var(--fs-body); }
+}
+
+/* ================= */
+/* MOBILE            */
+/* ================= */
+@media (max-width: 768px) {
+  .mainSection {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 110px;
+    gap: var(--space-6);
+  }
+  .aboutIssContain {
+    align-items: center;
+  }
+  .heroUnderline { margin-left: auto; margin-right: auto; }
+  .heroLead { max-width: 42ch; }
+  .btnsContain { justify-content: center; }
+  .issLogo { width: min(260px, 60vw); }
+}
+
+@media (max-width: 480px) {
+  .mainSection { margin-top: 92px; }
+  .btnsContain { width: 100%; flex-direction: column; align-items: stretch; }
+  .btnsContain .btn { width: 100%; }
+}
