@@ -4,9 +4,10 @@
   left: 0;
   width: 100vw;
   height: 84px;
-  display: flex;
+  /* 3-column grid: logo left | menu perfectly centered | controls right */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 0 var(--space-7);
   background: color-mix(in srgb, var(--bg-0) 55%, transparent);
   backdrop-filter: blur(30px);
@@ -19,6 +20,7 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
 }
 .logo img {
   width: 52px;
@@ -34,13 +36,11 @@
   padding: 0;
   justify-content: center;
   align-items: center;
-  flex: 1 1 auto;
-  min-width: 0;
   flex-wrap: wrap;         /* longer RU/TG labels wrap instead of overflowing */
   row-gap: var(--space-2);
 }
 
-.navLink { white-space: nowrap; }
+.navLink span { white-space: nowrap; }
 
 .navItem {
   position: relative;
@@ -88,6 +88,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  justify-self: end;
 }
 
 .iconButton {
@@ -193,25 +194,28 @@
 }
 
 @media (max-width: 768px) {
-  .navContain { height: 64px; padding: 0 var(--space-4); }
+  /* Two rows: logo + controls on top, centered menu below */
+  .navContain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
+  }
   .logo img { width: 40px; height: 40px; }
-  .navMenu { gap: var(--space-4); }
+  .navMenu {
+    order: 3;
+    width: 100%;
+    gap: var(--space-4);
+    justify-content: center;
+  }
   .navLink { font-size: var(--fs-label); }
 }
 
 @media (max-width: 480px) {
-  .navContain {
-    height: auto;
-    padding: var(--space-2) var(--space-3);
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-  .navMenu {
-    order: 3;
-    width: 100%;
-    gap: var(--space-3);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .navContain { padding: var(--space-2) var(--space-3); }
+  .navMenu { gap: var(--space-3); }
   .iconButton, .langButton { height: 34px; }
 }
