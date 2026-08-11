@@ -9,6 +9,7 @@ import { HeaderContent } from "../src/components/header/headerContant/headerCont
 import { Home } from "../src/pages/home/home";
 import { About } from "../src/pages/about/about";
 import { Gallery } from "../src/pages/gallery/gallery";
+import { Planetarium } from "../src/pages/planetarium/planetarium";
 
 function render(node: React.ReactElement, route = "/") {
   return renderToStaticMarkup(
@@ -31,6 +32,7 @@ async function main() {
     home: <Home />,
     about: <About />,
     gallery: <Gallery />,
+    planetarium: <Planetarium />,
   };
   const html = render(map[arg] ?? <Navbar />, route);
   console.log(html.replace(/></g, ">\n<"));
