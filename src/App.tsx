@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Navbar } from "./widgets/navbar/nav";
 import { Footer } from "./widgets/footer/footer";
 import { PageTransition } from "./shared/motion/PageTransition";
+import { AssistantWidget } from "./components/assistant/AssistantWidget";
 import "./i18n";
 
 // Route-level code splitting — keeps the planetarium's three.js/texture payload
@@ -14,6 +15,9 @@ const About = lazy(() => import("./pages/about/about").then((m) => ({ default: m
 const Gallery = lazy(() => import("./pages/gallery/gallery").then((m) => ({ default: m.Gallery })));
 const Planetarium = lazy(() =>
   import("./pages/planetarium/planetarium").then((m) => ({ default: m.Planetarium }))
+);
+const KnowledgeAdmin = lazy(() =>
+  import("./components/assistant/KnowledgeAdmin").then((m) => ({ default: m.KnowledgeAdmin }))
 );
 
 function RouteFallback() {
@@ -57,6 +61,7 @@ function AnimatedRoutes() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/planetarium" element={<Planetarium />} />
+            <Route path="/admin/knowledge" element={<KnowledgeAdmin />} />
             <Route path="/recruit" element={<ExternalRedirect />} />
           </Routes>
         </Suspense>
@@ -75,6 +80,7 @@ function App() {
       <Navbar />
       <AnimatedRoutes />
       <Footer />
+      <AssistantWidget />
     </BrowserRouter>
   );
 }

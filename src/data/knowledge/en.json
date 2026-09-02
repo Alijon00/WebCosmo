@@ -1,0 +1,278 @@
+[
+  {
+    "id": "why-not-falling",
+    "title": "Why the ISS doesn't fall to Earth",
+    "tags": ["orbit", "falling", "orbital speed", "gravity", "weightlessness"],
+    "body": "At the ISS's orbital altitude, Earth's pull is almost as strong as it is on the surface. The station doesn't fall because there's no gravity, but because it moves sideways very fast — about 28 thousand km/h. The Earth is round, and while the station falls toward it, the surface curves away beneath it. So the ISS is always falling, but it keeps missing the Earth — and that is what we call an orbit."
+  },
+  {
+    "id": "orbital-speed",
+    "title": "What orbital speed is",
+    "tags": ["orbital speed", "orbit", "speed", "first cosmic velocity"],
+    "body": "Orbital speed is the speed a body must move sideways to stay in orbit around a planet. For a low Earth orbit it is about 7.7 km per second. If it goes slower, the body arcs back down and falls to Earth. The lower the orbit, the greater the speed needed, because gravity is stronger there."
+  },
+  {
+    "id": "microgravity",
+    "title": "Microgravity: why it isn't the absence of gravity",
+    "tags": ["microgravity", "weightlessness", "gravity", "free fall"],
+    "body": "On the ISS people often say \"weightlessness\", but it's more correct to say \"microgravity\". Gravity there is almost the same as on Earth — about 90 percent of what we're used to. Astronauts float not because gravity has disappeared, but because the station and everything inside it are in free fall around the Earth. They fall together at the same speed, so it seems like there is no weight."
+  },
+  {
+    "id": "orbit-altitude",
+    "title": "The ISS orbital altitude and why it is raised",
+    "tags": ["altitude", "orbit", "atmosphere", "drag", "orbit correction"],
+    "body": "The ISS flies at roughly 400 km above the Earth. At this height there are still very thin traces of the atmosphere that slightly slow the station down, so it gradually sinks. That's why from time to time the orbit is raised using the engines of docked spacecraft. This correction is done so the station doesn't drop too low and stays at a safe altitude."
+  },
+  {
+    "id": "oxygen",
+    "title": "Where the ISS gets its oxygen",
+    "tags": ["oxygen", "air", "electrolysis", "life support", "water"],
+    "body": "Most of the station's oxygen is made from water using electrolysis — an electric current is passed through the water, and it splits into oxygen and hydrogen. The electricity for this comes from solar panels. The oxygen is used for the crew to breathe, and some supplies are also brought up from Earth by cargo ships. Special systems remove the carbon dioxide that the astronauts breathe out."
+  },
+  {
+    "id": "water-recycling",
+    "title": "How water is recycled on the ISS",
+    "tags": ["water", "recycling", "life support", "closed loop"],
+    "body": "Water on the station is saved and reused many times. A special system collects moisture from the air, used water, and even urine, cleans it all, and turns it back into clean drinking water. This recycling recovers most of the water, so far less needs to be brought up from Earth. It's an example of a closed life-support loop that will also be useful on future long-distance flights."
+  },
+  {
+    "id": "food-sleep",
+    "title": "How astronauts eat and sleep on the ISS",
+    "tags": ["food", "sleep", "daily life", "weightlessness", "crew"],
+    "body": "Food is brought to the station mostly dried or ready-made in packages; before eating, water is often added and it is warmed up. Eating has to be done carefully so that crumbs and drops don't fly around the station. Astronauts sleep in small sleeping cabins in sleeping bags strapped to the wall, otherwise they would drift around the module while asleep. Because of microgravity you can lie down in any position — there is no up or down there."
+  },
+  {
+    "id": "docking",
+    "title": "How spacecraft dock with the ISS",
+    "tags": ["docking", "spacecraft", "soyuz", "crew dragon", "approach"],
+    "body": "To reach the station, a spacecraft first enters a nearby orbit and slowly approaches it. In the final stretch the approach speed is made very small so the connection is gentle. Some ships dock automatically, others are controlled by the crew. After connecting, the seal is checked for leaks, and only then are the hatches opened."
+  },
+  {
+    "id": "modules",
+    "title": "Which modules make up the ISS",
+    "tags": ["modules", "structure", "compartments", "laboratory", "node"],
+    "body": "The ISS is built from separate modules — large blocks joined together. There are living modules, science laboratories, docking nodes, and service compartments. On the outside, large solar panels and radiators for shedding heat are attached to the station. The modules were launched one by one and connected right there in orbit, so the station grew gradually."
+  },
+  {
+    "id": "eva",
+    "title": "Spacewalks (EVA)",
+    "tags": ["eva", "spacewalk", "spacesuit", "repair", "working outside"],
+    "body": "A trip outside is called an EVA — from the English \"extravehicular activity\". Astronauts put on special spacesuits that protect them from the vacuum, cold, heat, and radiation and provide air to breathe. Outside they repair equipment, install new parts, and carry out experiments. To keep from floating away from the station, they clip on with safety tethers."
+  },
+  {
+    "id": "experiments",
+    "title": "What experiments are done on the ISS",
+    "tags": ["experiments", "science", "research", "microgravity", "medicine"],
+    "body": "The ISS is a big science laboratory in orbit. In microgravity, scientists study how liquids behave, how crystals and plants grow, and how the human body changes in space. Many experiments can't be done on Earth because gravity always gets in the way here. The results help medicine, technology, and preparation for future long-distance flights."
+  },
+  {
+    "id": "debris",
+    "title": "Space debris and avoidance maneuvers",
+    "tags": ["space debris", "avoidance maneuver", "fragments", "safety", "orbit"],
+    "body": "A lot of fragments from old satellites and rockets orbit the Earth — this is space debris. Even a small piece at enormous speed can damage the station. Dangerous objects are tracked from the ground, and if a fragment might pass too close, the ISS's orbit is shifted a little using the engines. This avoidance maneuver moves the station off the dangerous path."
+  },
+  {
+    "id": "radiation",
+    "title": "Radiation in space and protecting the crew",
+    "tags": ["radiation", "rays", "protection", "magnetic field", "health"],
+    "body": "There is more radiation in space than on Earth's surface, because there is no thick atmosphere there. Earth's magnetic field partly protects low orbit, but the crew still receives more radiation than people on the ground. The station's walls and special materials weaken the radiation a little. The dose received is watched closely to keep it within safe limits."
+  },
+  {
+    "id": "assembly-history",
+    "title": "The history of building the ISS since 1998",
+    "tags": ["history", "assembly", "1998", "modules", "construction"],
+    "body": "Construction of the ISS began in 1998, when the first module was placed in orbit. After that, new modules were launched one by one and connected together right in space. People have lived on the station continuously since 2000 — it has never been empty since then. The station was built and maintained together by several countries over many years."
+  },
+  {
+    "id": "partners",
+    "title": "Which countries take part in the ISS project",
+    "tags": ["countries", "partners", "cooperation", "agencies", "international"],
+    "body": "The ISS is an international project that several space agencies take part in. The main partners are the USA, Russia, Europe, Japan, and Canada. Different countries built different parts of the station and run the mission together. It is one of the biggest examples of peaceful international cooperation in science and technology."
+  },
+  {
+    "id": "cost",
+    "title": "How much the ISS costs",
+    "tags": ["cost", "price", "funding", "budget", "project"],
+    "body": "The ISS is one of the most expensive things people have ever built. The costs come from building the modules, launching rockets, delivering cargo, and paying thousands of specialists on the ground. The expenses are shared among the partner countries. An exact figure is hard to name, but it comes to tens of billions of dollars over all the years of the project."
+  },
+  {
+    "id": "see-from-earth",
+    "title": "How to see the ISS from Earth and why it is bright",
+    "tags": ["observing", "brightness", "sky", "how to see", "solar panels"],
+    "body": "The ISS can be seen from Earth with the naked eye as a bright moving point that doesn't blink. It doesn't glow on its own — its large solar panels and body reflect sunlight. The best time to watch the station is shortly after sunset or before dawn, when the sky is dark but the station is still lit by the Sun. It crosses the sky in a few minutes and moves faster and more smoothly than an airplane."
+  },
+  {
+    "id": "crew-vehicles",
+    "title": "The Soyuz and Crew Dragon spacecraft",
+    "tags": ["soyuz", "crew dragon", "spacecraft", "crew", "delivery"],
+    "body": "People are carried to the ISS and back by crewed spacecraft. The Russian Soyuz has delivered crews for many decades and is considered very reliable. SpaceX's American Crew Dragon is a newer ship, and it also carries astronauts to the station. Both spacecraft launch on a rocket, dock with the station, and then bring people back to Earth."
+  },
+  {
+    "id": "communication",
+    "title": "How the ISS communicates with Earth",
+    "tags": ["communication", "antennas", "satellites", "radio", "mission control"],
+    "body": "The station is constantly in touch with Earth through radio signals. So that the link doesn't break, the signal is often relayed through special relay satellites in a high orbit. Through this link the crew talks with mission control, sends experiment data, and even goes online. Control centers on Earth watch over the station around the clock."
+  },
+  {
+    "id": "after-2030",
+    "title": "What will happen to the ISS after 2030",
+    "tags": ["future", "2030", "retirement", "new stations", "plan"],
+    "body": "The ISS has been working for a very long time, and its equipment is gradually aging. The partners plan to use the station until about the end of the decade, and then safely bring it down over the ocean. New stations, including commercial ones built by private companies, are being prepared to take its place. This is how people want to keep a permanent presence in near-Earth orbit."
+  },
+  {
+    "id": "become-astronaut",
+    "title": "How to become an astronaut",
+    "tags": ["astronaut", "profession", "selection", "training", "health"],
+    "body": "To become an astronaut, you usually need a good education in science, engineering, medicine, or aviation and strong health. Candidates go through a strict selection and many years of training. They learn to operate the ship's systems, work in a spacesuit, act in weightlessness, and stay calm in difficult situations. Teamwork, discipline, and the ability to learn quickly are important."
+  },
+  {
+    "id": "body-effects",
+    "title": "How spaceflight affects the body",
+    "tags": ["health", "body", "muscles", "bones", "weightlessness"],
+    "body": "In weightlessness the body doesn't need to fight gravity, so muscles and bones gradually grow weaker. Fluids in the body shift upward, which often makes the face look a bit puffy. To stay in shape, astronauts exercise every day on special machines. After returning to Earth, the body needs time to get used to gravity again."
+  },
+  {
+    "id": "iss-vs-satellite",
+    "title": "How the ISS differs from an ordinary satellite",
+    "tags": ["satellite", "difference", "station", "crew", "orbit"],
+    "body": "Technically the ISS is also an artificial satellite of Earth, since it orbits the planet. But ordinary satellites work without people and do a single job: communication, imaging, or navigation. The ISS, however, is a large inhabited station where people live and work all the time. It is much bigger than an ordinary satellite, and its orbit is deliberately maintained."
+  },
+  {
+    "id": "tle",
+    "title": "What a TLE (two-line element set) is",
+    "tags": ["tle", "orbit", "data", "prediction", "tracker"],
+    "body": "A TLE is a special data format that describes a satellite's orbit in just two lines of numbers. These lines encode the orbit's parameters: its inclination, altitude, shape, and the object's position. From a TLE, programs can calculate where the satellite will be at any moment in time. This is exactly the data used to predict ISS passes over different cities."
+  },
+  {
+    "id": "crew",
+    "title": "The ISS crew",
+    "tags": ["crew", "cosmonauts", "astronauts", "makeup", "rotation"],
+    "body": "The ISS usually has a small crew of a few people on board at all times. Astronauts arrive for several months, and then a new team replaces them, so the station is never left empty. The crew members carry out experiments, maintain equipment, and keep an eye on the station's systems. The current crew changes over time, and it is published by the space agencies."
+  },
+  {
+    "id": "moon",
+    "title": "The Moon and flights to it",
+    "tags": ["moon", "earth's satellite", "apollo", "lunar missions", "craters"],
+    "body": "The Moon is Earth's natural satellite and the nearest celestial body to us. It has no air, and its surface is covered with craters from meteorite impacts. Last century people already landed on the Moon, and now different countries are preparing missions to it again. Scientists are especially interested in the ice in the dark polar craters, since water would be very useful for future expeditions."
+  },
+  {
+    "id": "mars",
+    "title": "Mars — the red planet",
+    "tags": ["mars", "planet", "red planet", "rovers", "exploration"],
+    "body": "Mars is Earth's neighboring planet, called red because of the color of its iron-rich soil. It is very cold there, and the air is thin and not fit for breathing. Automatic rovers drive across Mars's surface and study its rocks, weather, and traces of water from the past. Many people dream of one day sending humans there, but it is a very hard and distant task."
+  },
+  {
+    "id": "solar-system",
+    "title": "The Solar System and the planets",
+    "tags": ["solar system", "planets", "sun", "orbits", "space"],
+    "body": "The Solar System is the Sun and everything that orbits around it. It includes eight planets, their moons, as well as asteroids and comets. Closer to the Sun are the small rocky planets, including Earth, and farther out are the huge gas and ice giants. All of it is held together by the pull of the Sun, the most massive body in the system."
+  },
+  {
+    "id": "black-holes",
+    "title": "What black holes are",
+    "tags": ["black hole", "gravity", "stars", "space", "event horizon"],
+    "body": "A black hole is a region of space where the pull is so strong that not even light can escape from it. They often form when a very massive star squeezes in on itself at the end of its life. The boundary past which there is no return is called the event horizon. Black holes themselves can't be seen, but they are found by how they affect nearby stars and gas."
+  },
+  {
+    "id": "galaxies",
+    "title": "Galaxies",
+    "tags": ["galaxy", "milky way", "stars", "universe", "space"],
+    "body": "A galaxy is a huge cluster of stars, gas, and dust bound together by their shared gravity. Our galaxy is called the Milky Way, and it has hundreds of billions of stars, including the Sun. Galaxies come in different shapes: spiral, elliptical, and irregular. There are countless numbers of them in the Universe, scattered across colossal distances from one another."
+  },
+  {
+    "id": "jwst",
+    "title": "The James Webb Space Telescope",
+    "tags": ["telescope", "james webb", "infrared", "observations", "universe"],
+    "body": "The James Webb Telescope is a large space telescope that works in infrared light. Its infrared vision lets it see very distant and cold objects hidden in dust. It studies the birth of stars and galaxies and looks into the distant past of the Universe. The telescope works far from Earth, where nothing disturbs its sensitive instruments."
+  },
+  {
+    "id": "rockets-thrust",
+    "title": "How rockets fly and what jet thrust is",
+    "tags": ["rocket", "thrust", "jet propulsion", "fuel", "engine"],
+    "body": "A rocket flies thanks to jet thrust: the engine forcefully throws hot gases downward, and by the law of recoil they push the rocket upward. For this the rocket carries both fuel and an oxidizer, so it can work even in the airless void of space. To reach orbit it must build up a very high speed, and a huge amount of fuel is used to do it. That's why rockets are made in several stages and drop the empty stages along the way."
+  },
+  {
+    "id": "first-satellite",
+    "title": "The first artificial satellite",
+    "tags": ["satellite", "first satellite", "history", "1957", "space"],
+    "body": "The first artificial satellite of Earth in history was launched in 1957. It was a small metal ball with antennas that sent out simple radio signals. It didn't do any complicated work, but it proved that people could put a craft into orbit. The space age began with this launch."
+  },
+  {
+    "id": "gagarin",
+    "title": "Yuri Gagarin — the first human in space",
+    "tags": ["gagarin", "first human", "history", "1961", "flight"],
+    "body": "Yuri Gagarin became the first human to travel to space, in 1961. He circled the Earth once in orbit aboard a spacecraft and returned safely. The flight didn't last long, but it proved that a person can live and work in space. Gagarin's name has been known all over the world ever since."
+  },
+  {
+    "id": "comms-gps-satellites",
+    "title": "Communication and navigation satellites (GPS)",
+    "tags": ["satellite", "gps", "navigation", "communication", "orbit"],
+    "body": "Many satellites serve people every day. Communication satellites carry phone calls, the internet, and television across great distances. Navigation satellites, such as the GPS systems, help phones and cars determine their location. To do this, a receiver picks up signals from several satellites at once and works out its coordinates from them."
+  },
+  {
+    "id": "asteroids-comets",
+    "title": "Asteroids and comets",
+    "tags": ["asteroid", "comet", "small bodies", "tail", "solar system"],
+    "body": "Asteroids are rocky fragments left over from the birth of the Solar System; most of them travel between Mars and Jupiter. Comets are made of ice and dust and come from the distant cold regions. When a comet nears the Sun, its ice evaporates and it grows a glowing tail. Both asteroids and comets help scientists understand what the early cosmos was made of."
+  },
+  {
+    "id": "spacesuit",
+    "title": "The spacesuit and why it is needed",
+    "tags": ["spacesuit", "protection", "vacuum", "oxygen", "eva"],
+    "body": "A spacesuit is a miniature personal spacecraft that is worn for a spacewalk. It creates pressure around the body, provides oxygen to breathe, and protects against the vacuum, extreme cold, and heat. The spacesuit has a cooling system, communications, and an air supply. Without it a person could not survive in open space for even a few moments."
+  },
+  {
+    "id": "space-tourism",
+    "title": "Space tourism",
+    "tags": ["tourism", "private flights", "tourists", "space", "spacecraft"],
+    "body": "Space tourism is spaceflight for ordinary people rather than professional astronauts. Private companies have begun selling such trips: some offer a short rise to the edge of space, others a few days in orbit. For now it is very expensive and available to only a few. Over time, the flights may become cheaper and more common."
+  },
+  {
+    "id": "starship",
+    "title": "Starship — a big ship for long-distance flights",
+    "tags": ["starship", "spacex", "rocket", "reusable", "mars"],
+    "body": "Starship is a large space system by SpaceX being developed for flights far beyond near-Earth orbit. It is designed to be fully reusable, so the same stages can be used again and again to make flights cheaper. Such a ship will be able to lift a lot of cargo and people. It is being considered for future missions to the Moon and Mars."
+  },
+  {
+    "id": "tiangong",
+    "title": "Tiangong — the Chinese space station",
+    "tags": ["tiangong", "china", "station", "orbit", "crew"],
+    "body": "Tiangong is China's space station, which operates in near-Earth orbit. It is smaller than the ISS and is assembled from several modules. Chinese astronauts live and work on the station and carry out scientific experiments. It is the second large inhabited station in operation today alongside the ISS."
+  },
+  {
+    "id": "hisar-observatory",
+    "title": "The Hisar Astronomical Observatory",
+    "tags": ["observatory", "hisar", "tajikistan", "observations", "satellites"],
+    "body": "The Hisar Astronomical Observatory is located in Tajikistan, not far from Dushanbe. Here astronomers observe the sky and, in particular, track Earth's artificial satellites. The clear mountain sky and convenient location make this a good place for observations. The observatory is an important center of astronomical science in the country."
+  },
+  {
+    "id": "ulugbek-observatory",
+    "title": "Ulugh Beg's observatory in Samarkand",
+    "tags": ["ulugh beg", "observatory", "samarkand", "history", "stars"],
+    "body": "In the 15th century the ruler and scholar Ulugh Beg built a large observatory in Samarkand. Its main instrument was a huge stone sextant for precisely measuring the positions of the celestial bodies. Ulugh Beg's astronomers compiled a famous star catalog, very accurate for its time. This observatory is a pride of medieval science in Central Asia."
+  },
+  {
+    "id": "persian-astronomy",
+    "title": "Astronomy in Persian and Central Asian science",
+    "tags": ["history", "persia", "central asia", "scholars", "stars"],
+    "body": "Many centuries ago, scholars of the Persian and Central Asian world made a great contribution to astronomy. They translated and developed ancient knowledge, refined the positions of the stars and planets, and built observatories. Their works on mathematics and astronomy were later studied in many countries. This tradition connects the region's modern science with its rich past."
+  },
+  {
+    "id": "tajik-scientists",
+    "title": "The contribution of Tajik scientists to space science",
+    "tags": ["tajikistan", "scientists", "science", "astronomy", "observatory"],
+    "body": "Tajikistan has its own school of astronomy and space science. The country's scientists observe satellites, study comets and meteors, and take part in international research. The Hisar Observatory and scientific institutes train new specialists. This is how the region continues its ancient tradition of studying the sky, now with modern methods."
+  },
+  {
+    "id": "sun-star",
+    "title": "The Sun — our star",
+    "tags": ["sun", "star", "energy", "light", "solar system"],
+    "body": "The Sun is the nearest star to us and the center of the Solar System. It is a huge, blazing ball of gas, and deep inside it energy is released and turned into light and heat. It is the Sun's light that gives life to plants and warms the Earth. Compared with the planets, the Sun is incredibly large and holds almost all the mass of our system."
+  },
+  {
+    "id": "sky-tajikistan",
+    "title": "How to observe the starry sky in Tajikistan",
+    "tags": ["observing", "sky", "tajikistan", "stars", "telescope"],
+    "body": "The mountains of Tajikistan are a good place to watch the sky, because far from cities the air is clean and there are few lights. A dark sky lets you see many stars, the planets, and even the faint glow of the Milky Way. It is best to observe on a clear, moonless night, letting your eyes get used to the darkness. A pass of the bright ISS can be spotted even without any telescope."
+  }
+]

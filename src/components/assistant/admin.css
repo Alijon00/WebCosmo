@@ -1,0 +1,103 @@
+/* Админ-панель базы знаний — использует общие токены сайта. */
+
+.kadmin {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4) var(--space-9);
+}
+.kadmin-head { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-6); }
+.kadmin-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin: 0;
+}
+.kadmin-sub { color: var(--text-secondary); font-size: var(--fs-small); max-width: 60ch; }
+.kadmin-head .btn { align-self: flex-start; margin-top: var(--space-2); }
+
+.kadmin-notice {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-5);
+}
+
+.kadmin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.kadmin-card { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.kadmin-card-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.kadmin-field { display: flex; flex-direction: column; gap: 6px; }
+.kadmin-field > span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.kadmin-field input,
+.kadmin-field select,
+.kadmin-field textarea {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-1);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  width: 100%;
+  resize: vertical;
+}
+.kadmin-field input:focus,
+.kadmin-field select:focus,
+.kadmin-field textarea:focus { outline: none; border-color: var(--accent); }
+
+.kadmin-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-2); }
+
+.kadmin-result {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.kadmin-result p { font-size: var(--fs-small); line-height: var(--lh-normal); color: var(--text-primary); }
+
+.kadmin-list ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4); }
+.kadmin-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+.kadmin-item h3 { font-family: var(--font-display); font-size: var(--fs-body); color: var(--text-primary); margin: 0 0 4px; }
+.kadmin-item-tags { font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-bottom: 6px; }
+.kadmin-item-body { font-size: var(--fs-small); color: var(--text-secondary); line-height: var(--lh-normal); }
+.kadmin-empty { color: var(--text-tertiary); font-size: var(--fs-small); margin-top: var(--space-3); }
+
+/* Плашки источника из assistant.css переиспользуются здесь тоже. */
+.kadmin .asst-badge { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-tertiary); display: inline-flex; align-items: center; gap: 6px; }
+.kadmin .asst-badge-dot { width: 7px; height: 7px; border-radius: 50%; }
+.kadmin .asst-badge--live .asst-badge-dot { background: var(--accent); }
+.kadmin .asst-badge--local .asst-badge-dot { background: #3ddc84; }
+.kadmin .asst-badge--external .asst-badge-dot { background: var(--text-tertiary); }

@@ -41,7 +41,23 @@
       "Bash(sort -u .gitignore.tmp -o .gitignore)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(node_modules/.bin/esbuild --version)"
+      "Bash(node_modules/.bin/esbuild --version)",
+      "Bash(chmod +x /tmp/ssr-run.sh)",
+      "Bash(/tmp/ssr-run.sh nav *)",
+      "Bash(/tmp/ssr-run.sh hero *)",
+      "Bash(/tmp/ssr-run.sh footer *)",
+      "Bash(/tmp/ssr-run.sh about *)",
+      "Bash(/tmp/ssr-run.sh planetarium *)",
+      "Bash(npm i *)",
+      "Bash(node *)",
+      "Bash(npx vite-node *)",
+      "Bash(npx vitest *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(echo \"started, pid $!\")",
+      "Bash(curl -s -o /tmp/r.json -w \"HTTP %{http_code}\\\\n\" -X POST http://localhost:5173/api/ask -H 'Content-Type: application/json' -d '{\"query\":\"где мкс\",\"lang\":\"ru\"}')",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/api/ask)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" -X POST http://localhost:5173/api/ask -H 'Content-Type: application/json' -d '{}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} \" -X POST http://localhost:5173/api/ask -H 'Content-Type: application/json' -d '{\"query\":\"тест\",\"lang\":\"ru\"}')"
     ]
   }
 }

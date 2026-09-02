@@ -5,6 +5,11 @@
 #dist
 *.local
 *.log
+
+# Секреты окружения (ключ Gemini) — .env не коммитим, .env.example коммитим
+.env
+.env.*
+!.env.example
 *.njsproj
 *.ntvs*
 *.sln

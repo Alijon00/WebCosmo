@@ -11,7 +11,6 @@ const NAV_ITEMS: { to: string; key: string; end?: boolean }[] = [
   { to: "/about", key: "About" },
   { to: "/gallery", key: "Gallery" },
   { to: "/planetarium", key: "Planetarium" },
-  { to: "/recruit", key: "Mission" },
 ];
 
 type LanguageCode = "en" | "ru" | "tg";

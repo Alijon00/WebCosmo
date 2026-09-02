@@ -1,0 +1,251 @@
+/* ============================================================= */
+/*  АССИСТЕНТ «MISSION CONTROL AI» — стили в дизайн-системе сайта  */
+/*  Чёрный фон · жёлтый акцент · моноширинные uppercase-заголовки */
+/*  Использует общие токены из index.css (--accent, --bg, и т.д.) */
+/* ============================================================= */
+
+/* ---- Плавающая кнопка (FAB) ---- */
+.asst-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  box-shadow: 0 6px 24px var(--accent-glow);
+  transition: transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+.asst-fab:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: var(--accent-bright);
+}
+.asst-fab.is-open {
+  background: var(--bg-2);
+  color: var(--accent);
+}
+
+/* ---- Панель чата ---- */
+.asst-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 92px;
+  z-index: 1000;
+  width: min(400px, calc(100vw - 32px));
+  height: min(600px, calc(100vh - 120px));
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-1);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--accent-soft);
+  overflow: hidden;
+  animation: asstIn var(--dur-mid) var(--ease-out);
+}
+@keyframes asstIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- Шапка ---- */
+.asst-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--accent-soft), transparent);
+}
+.asst-header-titles { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.asst-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.asst-title {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.asst-header-actions { display: flex; gap: var(--space-1); flex-shrink: 0; }
+.asst-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background-color var(--dur-fast);
+}
+.asst-icon-btn:hover {
+  color: var(--accent);
+  border-color: var(--border-strong);
+  background: var(--surface-1);
+}
+
+/* ---- Лента сообщений ---- */
+.asst-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  scrollbar-width: thin;
+}
+.asst-msg { display: flex; flex-direction: column; gap: var(--space-1); max-width: 100%; }
+.asst-msg--user { align-items: flex-end; }
+.asst-msg--assistant { align-items: flex-start; }
+
+.asst-bubble {
+  max-width: 85%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.asst-msg--user .asst-bubble {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-bottom-right-radius: var(--radius-sm);
+}
+.asst-msg--assistant .asst-bubble {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+/* ---- Плашка источника ---- */
+.asst-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 0 2px;
+}
+.asst-badge-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.asst-badge--live .asst-badge-dot { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+.asst-badge--local .asst-badge-dot { background: #3ddc84; }
+.asst-badge--external .asst-badge-dot { background: var(--text-tertiary); }
+.asst-badge--fallback { font-style: italic; }
+
+/* ---- Чипы / подсказки ---- */
+.asst-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-1); }
+.asst-chip {
+  font-family: var(--font-body);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color var(--dur-fast), color var(--dur-fast), background-color var(--dur-fast);
+}
+.asst-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---- Индикатор набора ---- */
+.asst-typing { display: inline-flex; align-items: center; gap: 5px; min-height: 20px; }
+.asst-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  animation: asstBlink 1.2s infinite ease-in-out;
+}
+.asst-dot:nth-child(2) { animation-delay: 0.2s; }
+.asst-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes asstBlink {
+  0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ---- Строка ввода ---- */
+.asst-input-row {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.asst-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-1);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+}
+.asst-input:focus { outline: none; border-color: var(--accent); }
+.asst-send {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background-color var(--dur-fast), opacity var(--dur-fast);
+}
+.asst-send:hover:not(:disabled) { background: var(--accent-bright); }
+.asst-send:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---- Мобильный: панель на весь экран ---- */
+@media (max-width: 560px) {
+  .asst-panel {
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .asst-fab { right: 16px; bottom: 16px; }
+}
+
+/* ---- prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .asst-panel { animation: none; }
+  .asst-fab:hover { transform: none; }
+  .asst-dot { animation: none; opacity: 0.6; }
+  .asst-messages { scroll-behavior: auto; }
+}
